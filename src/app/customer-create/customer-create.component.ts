@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ICustomer} from '../models/Customer';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../services/customer.service';
 
 @Component({
@@ -15,14 +15,15 @@ export class CustomerCreateComponent implements OnInit {
 
   ngOnInit() {
     this.createForm = this.fb.group({
-      firstName: [''],
-      lastName: ['']
+      firstName: ['', [Validators.required, Validators.minLength(6)]],
+      lastName: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
   addCustomer() {
     const {value} = this.createForm;
     this.customerService.createCustomer(value).subscribe(next => {
       this.customerService;
+      alert('Tạo mới khách hàng thành công!')
       this.createForm.reset({
         fistName: [''],
         lastName: ['']

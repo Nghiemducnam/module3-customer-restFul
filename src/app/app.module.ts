@@ -9,15 +9,15 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { CustomerCreateComponent } from './customer-create/customer-create.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
-// import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
+import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerRestFulComponent,
     CustomerCreateComponent,
-    CustomerEditComponent
-    // CustomerDeleteComponent
+    CustomerEditComponent,
+    CustomerDeleteComponent
   ],
   imports: [
     BrowserModule,

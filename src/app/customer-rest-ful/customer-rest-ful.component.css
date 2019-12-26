@@ -1,0 +1,14 @@
+h3{
+  font-size: 35px;
+
+  text-align: center;
+}
+th, td{
+  text-align: center;
+}
+table{
+  border: 1px solid black;
+}
+th{
+  background: lightblue;
+}

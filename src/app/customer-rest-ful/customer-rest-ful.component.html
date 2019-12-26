@@ -1,12 +1,12 @@
 <div class="panel panel-danger">
   <div class="panel panel-heading">
-    <h3 class="panel-title">Customer</h3>
+    <h3 class="panel-title">Customer List</h3>
   </div>
   <div class="panel-body">
-    <table class="table table-bordered table-hover" border="1px">
+    <table class="table table-bordered table-hover">
       <thead>
       <tr>
-        <th>ID</th>
+        <th>STT</th>
         <th>first name</th>
         <th>last name</th>
         <th>Edit</th>
@@ -15,11 +15,12 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of customerList; index as i">
-        <td>{{item.id}}</td>
+        <td>{{i+1}}</td>
         <td>{{item.firstName}}</td>
         <td>{{item.lastName}}</td>
-        <td><button [routerLink]="['/customers/'+item.id+'/edit']" >Edit</button></td>
-        <td><button (click) = "deleteCustomer(i)">Delete</button></td>
+        <td><button [routerLink]="['/customers/'+item.id+'/edit']" class="btn btn-success">Edit</button></td>
+        <td><button [routerLink]="['/customers/'+item.id+'/delete']" class="btn btn-danger">Delete</button></td>
+<!--        <td><button (click) = "deleteCustomer(i)" class="btn btn-danger">Delete</button></td>-->
       </tr>
       </tbody>
 

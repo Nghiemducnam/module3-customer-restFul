@@ -29,17 +29,17 @@ export class CustomerRestFulComponent implements OnInit {
     });
   }
 
-  deleteCustomer(i: number) {
-    const choice = confirm('Bạn có muốn xóa không');
-    if (choice) {
-      const post = this.customerList[i];
-      this.customerService.deleteCustomer(post.id).subscribe(next => {
-        this.customerList = this.customerList.filter(t => t.id !== post.id);
-      });
-      console.log(post);
-    } else {
-      this.router.navigate(['customers']);
-    }
-  }
+  // deleteCustomer(i: number) {
+  //   const choice = confirm('Bạn có muốn xóa không');
+  //   if (choice) {
+  //     const post = this.customerList[i];
+  //     this.customerService.deleteCustomer(post.id).subscribe(next => {
+  //       this.customerList = this.customerList.filter(t => t.id !== post.id);
+  //     });
+  //     console.log(post);
+  //   } else {
+  //     this.router.navigate(['customers']);
+  //   }
+  // }
 }
 

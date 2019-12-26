@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from '../services/customer.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ICustomer} from '../models/Customer';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -21,8 +21,8 @@ export class CustomerEditComponent implements OnInit {
   ngOnInit() {
     this.editForm = this.fb.group({
       id: [''],
-      firstName: [''],
-      lastName: ['']
+      firstName: ['', [Validators.required, Validators.minLength(6)]],
+      lastName: ['', [Validators.required, Validators.minLength(6)]]
     });
     const id = +this.route.snapshot.paramMap.get('id');
     this.customerService.getCustomerById(id).subscribe(
@@ -41,7 +41,7 @@ export class CustomerEditComponent implements OnInit {
       this.customerService.updateCustomer(value).subscribe(
         next => {
           alert('Bạn đã sửa thành công!');
-          // this.router.navigate(['customers']);
+          this.router.navigate(['customers']);
         },
         error => console.log(error)
       );

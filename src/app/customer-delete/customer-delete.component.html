@@ -1,29 +1,31 @@
-<h2 class="text-center">Customer Edit form</h2>
+<nav>
+  <a [routerLink]="['']">Customer list</a>
+</nav>
+<h2 class="text-center">Delete this customer</h2>
 <form [formGroup]="deleteForm" (ngSubmit)="deleteCustomer()" class="col-md-6 offset-md-3">
   <div class="form-group row">
     <label class="col">
-      First name
-      <input type="text" class="form-control" formControlName="firstName">
+      Customer ID
+      <input type="text" class="form-control" formControlName="id" disabled="disabled">
     </label>
   </div>
-  <!--  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">-->
-  <!--    Invalid email!-->
-  <!--  </div>-->
+  <div class="form-group row">
+    <label class="col">
+      First name
+      <input type="text" class="form-control" formControlName="firstName" disabled="disabled">
+    </label>
+  </div>
   <div class="form-group row">
     <label class="col">
       Last name
-      <input type="text" class="form-control" formControlName="lastName">
+      <input type="text" class="form-control" formControlName="lastName" disabled="disabled">
     </label>
   </div>
-
-  <!--  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">-->
-  <!--    Invalid password!-->
-  <!--  </div>-->
   <div class="form-group">
-    <button class="btn btn-info" type="submit">Delete</button>
+    <button class="btn btn-danger">Delete</button>
   </div>
 </form>
 
-<pre>
-{{ deleteForm.value | json}}
-</pre>
+<!--<pre>-->
+<!--{{ deleteForm.value | json}}-->
+<!--</pre>-->
