@@ -1,8 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {CustomerRestFulComponent} from './customer-rest-ful/customer-rest-ful.component';
+import {CustomerCreateComponent} from './customer-create/customer-create.component';
+import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '', component: CustomerRestFulComponent
+  },
+  {
+  path: 'customers',
+  component: CustomerRestFulComponent
+},
+  {
+  path: 'customers/create',
+  component: CustomerCreateComponent
+}
+, {
+  path: 'customers/:id/edit',
+  component: CustomerEditComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
